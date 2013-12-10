@@ -35,7 +35,7 @@ function validateGuess()
 			}  
         	else
 			{
-				$(".number").html(guess + ' ' + "Is the not" + ' ' + number)
+				$(".number").html(guess + ' ' + "Is not the right" + ' ' + number)
 			}
 				
 				
