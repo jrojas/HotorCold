@@ -51,19 +51,30 @@ body {
 	margin:0 auto;
 }
 
-.message(
+form{
+	
+	text-align:center;
+	
+}
+
+.number{
+margin: 20px auto;
+text-align:center;
 
 }
 
 .input{
 	width: 200px;
 	display:block;
-	margin: 20px auto;
+	margin: 0 auto;
+	
+	
 	
 }
 
 .submit{
 	display:block;
-	margin:20px auto;}
+
+	margin: 20px auto;}
 
 
