@@ -37,6 +37,9 @@ function validateGuess()
 				case guess == "" :
 					$(".number").html("Number guess can not be blank")
 					break;
+					
+					// added a Case Statement for non numbers//
+					
 				case guess > 100 || guess <= 0  :
 					$(".number").html("Enter a number between 0-100")
 					break;
@@ -44,11 +47,7 @@ function validateGuess()
 					$(".number").html(guess + ' ' + "Is the right Number")
 					//add jquery code to change backgroung color to reddish
 					//add fadeIn effect
-						
-					
 						red.css("background","#c0392b");
-								
-						
 					break;
 				case guess != number:
 					$(".number").html("Try again! You guessed the wrong number")
@@ -69,7 +68,8 @@ function validateGuess()
 function resetGame()
 {
 	//Add Click function to reset game
-	$("#reset").on("click",function(){
+	$("#reset").on("click",function()
+	{
 		
 		 
 		 number = Math.floor(Math.random()*100);
@@ -77,7 +77,7 @@ function resetGame()
 		$("body").css("background","#ecf0f1");
 		
 		 console.log(number);
-		});
+	});
 };    
   
    
