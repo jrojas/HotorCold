@@ -51,11 +51,7 @@ body {
 	margin:0 auto;
 }
 
-form{
-	
-	text-align:center;
-	
-}
+
 
 .number{
 margin: 20px auto;
@@ -63,7 +59,7 @@ text-align:center;
 
 }
 
-.input{
+#guess{
 	width: 200px;
 	display:block;
 	margin: 0 auto;
@@ -72,9 +68,9 @@ text-align:center;
 	
 }
 
-.submit{
+#submit{
 	display:block;
 
-	margin: 20px auto;}
+	margin: 10px auto;}
 
 
