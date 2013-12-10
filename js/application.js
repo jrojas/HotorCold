@@ -74,6 +74,7 @@ function resetGame()
 		 
 		 number = Math.floor(Math.random()*100);
 		//reset to original background color
+		$("body").css("background","#ecf0f1");
 		
 		 console.log(number);
 		});
