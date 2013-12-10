@@ -67,10 +67,17 @@ text-align:center;
 	
 	
 }
-
+.align-form{
+	
+	text-align:center;
+	}
 #submit{
-	display:block;
+	
+
+	margin: 10px auto;
+	}
+#reset{
+	
 
 	margin: 10px auto;}
-
 
