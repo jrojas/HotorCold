@@ -23,6 +23,16 @@ $(document).ready(function()
         // you can use resetGame(this);
         resetGame();
     });
+	
+	
+	//Click Function to handle the key press
+	$('#guess').keypress(function(e)
+	{
+   		 if(e.which == 13)
+		 {  
+			$('#submit').click();
+    	 }
+	});
     
     
     
