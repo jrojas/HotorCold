@@ -8,9 +8,12 @@
 
 $(document).ready(function() 
 {
+	
+
     var number = Math.floor(Math.random() * 100);
     console.log(number);
     var body = $('body');
+	
 	
 	
 	
@@ -42,7 +45,7 @@ $(document).ready(function()
 	});
     
     
-    
+    var previousGuess = 0;
     function validateGuess() 
     {
 
@@ -53,17 +56,17 @@ $(document).ready(function()
 		
 		
 		//varibles for implementing hotter or colder
-		
-		var previousGuess = guess;
-        console.log("previousGuess = " + previousGuess);
+		if(previousGuess && !isNaN(previousGuess) && previousGuess > 0 && previousGuess < 101 )
+		{
+			
+		console.log("previousGuess = " + previousGuess, "new guess="+guess);
 		var previousDistance = Math.abs(previousGuess - number);
         console.log("previousDistance = " + previousDistance);
 		console.log("number =" + number);
         var newDistance = Math.abs(guess - number);
-        console.log("newDistance = " + newDistance);  
-			
-		                    
-
+        console.log("newDistance = " + newDistance);
+		}
+	
         console.log(guess);
         
         switch (true) {
@@ -91,26 +94,34 @@ $(document).ready(function()
                 break;
 			
 			case guess != number:
+			if(previousDistance && newDistance){
+				switch(false){
+					case previousDistance > newDistance:
+						//colder response
+						$('.number').html("Try again! You're Getting Colder :( ")
+						body.animate({backgroundColor: "#5fccff",color: "#3473db"}, 500);
+						break;
+					case newDistance > previousDistance:
+					//warmer response
+					
+						
+					$('.number').html("<h2>Your Guess is Warmer!:) </h2>")
+                		body.animate({backgroundColor: "#d35400",color: "#34495E"}, 500);
+						break;
+					
+					}
 				
-				$('.number').html(guess + ' ' + "Is The Wrong Number")
+				}else{
+						$('.number').html(guess + ' ' + "Is The Wrong Number")
                 
-                body.animate({backgroundColor: "#5fccff",color: "#34495E"}, 500);
-							
-			 
-				break;
-				
-				
-			
-			
-			 	
-		
+                		body.animate({backgroundColor: "#5fccff",color: "#34495E"}, 500);
+					}
+					break;
         
-        
-        }
-        ;
-    }
-    ;
-
+        };
+		previousGuess = guess;
+    };
+	
 
     // Resets  Game
     function resetGame() 
