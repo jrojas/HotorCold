@@ -1,11 +1,5 @@
  //JavaScript Document
 
-//TODO: The user should get feedback about their guess -- if it was too high, too low, or just right. Initially, don't worry about telling users if they're getting "hotter" or "colder", just tell them if //there previous guess was "hot" or "cold".
-//TODO: Your app should ensure that users provide valid inputs. For instance, if a user submits a spaces, a blank guess, or letters, they shoudl receive feedback         that they need to input a number.
-//complete: The app should feature a button that allows the user to start a new game, without making additional calls to the server
-//complete: Eventually add functionality so user can hit enter button to submit a guess. 
-//TODO: More feedback for user required. high/low warm/cold
-
 $(document).ready(function() 
 {
 	
