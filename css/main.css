@@ -72,14 +72,22 @@ text-align:center;
 	
 	text-align:center;
 	}
-#submit{
+#submit,#reset{
 	
 
-	margin: 10px auto;
+margin: 10px 10px;
+display: inline-block;
+width: 90px;
+color: #fff;
+font-size: 15px;
+
+background: #34495e;
+border-radius: 3px;
+padding: 12px 0;
+font-weight: 500;
+border:none;
+
+	
 	}
-#reset{
-	
 
-	margin: 10px auto;
-}
 
