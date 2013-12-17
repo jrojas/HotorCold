@@ -7,11 +7,7 @@ $(document).ready(function()
     var number = Math.floor(Math.random() * 100);
     console.log(number);
     var body = $('body');
-	
-	
-	
-	
-
+   
     //Click Function to Validate user response
     $('#submit').on('click', function() {
         
@@ -22,7 +18,8 @@ $(document).ready(function()
     //Click Function to reset game
     $('#reset').on('click', function() {
         // you can use resetGame(this);
-        resetGame();
+       // resetGame();
+		resetGame();
 		
     });
 	
@@ -37,9 +34,11 @@ $(document).ready(function()
 			
     	 }
 	});
-    
+   
+
     
     var previousGuess = 0;
+	
     function validateGuess() 
     {
 
@@ -66,22 +65,30 @@ $(document).ready(function()
         switch (true) {
             
             case guess == '':
-                $('.number').html("* Number guess can not be blank")
+                $('.number h2').html("* Number guess can not be blank")
 					 body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
 				
                 break;
             
 			case  isNaN(guess) :
-				 $('.number').html("* Value is not a legal number!")
+				 $('.number h2').html("* Value is not a legal number!")
 				 	body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
 				 
                 break;
             
             case guess > 100 || guess <= 0:
-                $('.number').html("Enter a number between 0-100")
+                $('.number h2').html("Enter a number between 0-100")
+				body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
                 break;
+				
+			case guess == previousGuess :
+                $('.number h2').html("Your entered the same number? Try Again!")
+				body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
+                break;
+				
+				
             case guess == number:
-                $('.number').html(guess + ' ' + "Is The Right Number")
+                $('.number h2').html(guess + ' ' + "Is The Right Number")
                 
                 body.animate({backgroundColor: "#c0392b",color: "#fff"}, 500);
                 $('#submit').attr("disabled", true);
@@ -92,21 +99,21 @@ $(document).ready(function()
 				switch(false){
 					case previousDistance > newDistance:
 						//colder response
-						$('.number').html("Try again! You're Getting Colder :( ")
+						$('.number h2').html("Try again! You're Getting Colder :(")
 						body.animate({backgroundColor: "#5fccff",color: "#3473db"}, 500);
 						break;
 					case newDistance > previousDistance:
 					//warmer response
 					
 						
-					$('.number').html("<h2>Your Guess is Warmer!:) </h2>")
+					$('.number h2').html("Your Guess is Warmer!:)")
                 		body.animate({backgroundColor: "#d35400",color: "#34495E"}, 500);
 						break;
 					
 					}
 				
 				}else{
-						$('.number').html(guess + ' ' + "Is The Wrong Number")
+						$('.number h2').html(guess + ' ' + "Is The Wrong Number")
                 
                 		body.animate({backgroundColor: "#5fccff",color: "#34495E"}, 500);
 					}
@@ -121,31 +128,24 @@ $(document).ready(function()
     function resetGame() 
     {
         body.animate({backgroundColor: "#ecf0f1",color: "#34495E"}, 500);
-        number = Math.floor(Math.random() * 100);
-        $('#guess').val('');
-        $('.number').empty();
-        $('#submit').attr("disabled", false);
+		number = Math.floor(Math.random() * 100);
+      $('#guess').val('');
+       $('.number h2').empty();
+      $('#submit').attr("disabled", false);
 		
-        console.log(number)
-    };
+      console.log(number)
+   };
 	
+
+
 	
-			
 			
 				
 			
 					
     
 				
-				//colder response 
-				//$('.number').html("Try again! You're Getting Colder :( ")
-				//body.animate({backgroundColor: "#5fccff",color: "#3473db"}, 500);
-				
-				//warmer response
-				//$('.number').html("Try again! You're Getting Warmer :( ")
-                //body.animate({backgroundColor: "#d35400",color: "#34495E"}, 500);
-						
-				  			
+
                                     
          	
 		
