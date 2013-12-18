@@ -147,7 +147,8 @@ $(document).ready(function()
     // Resets  Game
     function resetGame() 
     {
-        body.animate({backgroundColor: "#ecf0f1",color: "#34495E"}, 500);
+        //body.animate({backgroundColor: "#ecf0f1",color: "#34495E"}, 500);
+        animateBody("#ecf0f1","#34495E");
 		number = Math.floor(Math.random() * 100);
       $('#guess').val('');
       $('.number h2').empty();
