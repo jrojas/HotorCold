@@ -8,6 +8,7 @@ $(document).ready(function()
     console.log(number);
     var body = $('body');
     var	enterKey = false;
+    var messageTo = $('.number h2');
    
    
  
@@ -73,32 +74,32 @@ $(document).ready(function()
         switch (true) {
             
             case guess == '':
-                $('.number h2').html("* Number guess can not be blank")
+                messageTo.html("* Number guess can not be blank")
 					 
 				      animateBody("#ffffff","#34495E");
                 break;
             
 			case  isNaN(guess) :
-				 $('.number h2').html("* Value is not a legal number")
+				 messageTo.html("* Value is not a legal number")
 				 	
 				      animateBody("#ffffff","#34495E");
                 break;
             
             case guess > 100 || guess <= 0:
-                $('.number h2').html("Enter a number between 0-100")
+                messageTo.html("Enter a number between 0-100")
 				    
                   animateBody("#ffffff","#34495E");
                 break;
 				
 			case guess == previousGuess :
-                $('.number h2').html("Your entered the same number? Try Again")
+                messageTo.html("Your entered the same number? Try Again")
 				
                 animateBody("#ffffff","#34495E");
                 break;
 				
 				
             case guess == number :
-                $('.number h2').html(guess + ' ' + "Is The correct guess. Click Reset to play a new game")
+                messageTo.html(guess + ' ' + "Is The correct guess. Click Reset to play a new game")
                 
                
                 animateBody("#c0392b","#fff");
@@ -115,7 +116,7 @@ $(document).ready(function()
                         
 					case previousDistance > newDistance:
 						//colder response
-						$('.number h2').html("Try again! You're Getting Colder :(")
+						messageTo.html("Try again! You're Getting Colder :(")
 					
                          animateBody("#5fccff","#3473db");
 						break;
@@ -124,7 +125,7 @@ $(document).ready(function()
 					//warmer response
 					
 						
-					$('.number h2').html("Your Guess is Warmer!:)")
+					messageTo.html("Your Guess is Warmer!:)")
                 		
                         animateBody("#d35400","#34495E");
 						break;
@@ -132,7 +133,7 @@ $(document).ready(function()
 					}
 				
 				}else{
-						$('.number h2').html(guess + ' ' + "Is incorrect" +' '+ "Try again")
+						messageTo.html(guess + ' ' + "Is incorrect" +' '+ "Try again")
                 
                 		
                         animateBody("#5fccff","#34495E");
@@ -151,7 +152,7 @@ $(document).ready(function()
         animateBody("#ecf0f1","#34495E");
 		number = Math.floor(Math.random() * 100);
       $('#guess').val('');
-      $('.number h2').empty();
+      messageTo.empty();
       $('#submit').attr("disabled", false);
         enterKey = false;
        
