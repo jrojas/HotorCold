@@ -79,7 +79,7 @@ $(document).ready(function()
                 break;
             
 			case  isNaN(guess) :
-				 $('.number h2').html("* Value is not a legal number!")
+				 $('.number h2').html("* Value is not a legal number")
 				 	
 				      animateBody("#ffffff","#34495E");
                 break;
@@ -91,14 +91,14 @@ $(document).ready(function()
                 break;
 				
 			case guess == previousGuess :
-                $('.number h2').html("Your entered the same number? Try Again!")
+                $('.number h2').html("Your entered the same number? Try Again")
 				
                 animateBody("#ffffff","#34495E");
                 break;
 				
 				
             case guess == number :
-                $('.number h2').html(guess + ' ' + "Is The Right Number. Reset to Play a new game")
+                $('.number h2').html(guess + ' ' + "Is The correcr guess. Click Reset to play a new game")
                 
                
                 animateBody("#c0392b","#fff");
@@ -132,7 +132,7 @@ $(document).ready(function()
 					}
 				
 				}else{
-						$('.number h2').html(guess + ' ' + "Is The Wrong Number")
+						$('.number h2').html(guess + ' ' + "Is incorrect" +' '+ "Try again")
                 
                 		
                         animateBody("#5fccff","#34495E");
@@ -147,7 +147,7 @@ $(document).ready(function()
     // Resets  Game
     function resetGame() 
     {
-        //body.animate({backgroundColor: "#ecf0f1",color: "#34495E"}, 500);
+      
         animateBody("#ecf0f1","#34495E");
 		number = Math.floor(Math.random() * 100);
       $('#guess').val('');
