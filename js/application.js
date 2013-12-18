@@ -9,14 +9,15 @@ $(document).ready(function()
     var body = $('body');
     var	enterKey = false;
     var messageTo = $('.number h2');
-   
-   
+    var slideFast = $('.number');
+    var guessClick = $('#guess');
+    var submitClick = $('#submit');
  
     
 
    
     //Click Function to Validate user response
-    $('#submit').on('click', function () {
+    submitClick.on('click', function () {
         
         validateGuess();
 		
@@ -32,12 +33,12 @@ $(document).ready(function()
 	
 	
 	//Click Function to handle the key press
-	$('#guess').keypress(function(e)
+	guessClick.keypress(function(e)
 	{
    		
         if(e.which == 13 && enterKey == false)
 		 {  
-			$('#submit').click();
+			submitClick.click();
 			
 			
     	 }
@@ -53,7 +54,7 @@ $(document).ready(function()
 
       
         var guess = $("#guess").val();
-        var effect = $('.number').effect("slide","fast");
+        var effect = slideFast.effect("slide","fast");
        
 		
 		
@@ -104,7 +105,7 @@ $(document).ready(function()
                
                 animateBody("#c0392b","#fff");
                 
-                $('#submit').attr("disabled", true);
+                submitClick.attr("disabled", true);
                 enterKey = true;
                       
 
@@ -151,9 +152,9 @@ $(document).ready(function()
       
         animateBody("#ecf0f1","#34495E");
 		number = Math.floor(Math.random() * 100);
-      $('#guess').val('');
+      guessClick.val('');
       messageTo.empty();
-      $('#submit').attr("disabled", false);
+      submitClick.attr("disabled", false);
         enterKey = false;
        
      
