@@ -7,9 +7,15 @@ $(document).ready(function()
     var number = Math.floor(Math.random() * 100);
     console.log(number);
     var body = $('body');
+    var	enterKey = false;
+   
+   
+ 
+    
+
    
     //Click Function to Validate user response
-    $('#submit').on('click', function() {
+    $('#submit').on('click', function () {
         
         validateGuess();
 		
@@ -27,7 +33,8 @@ $(document).ready(function()
 	//Click Function to handle the key press
 	$('#guess').keypress(function(e)
 	{
-   		 if(e.which == 13)
+   		
+        if(e.which == 13 && enterKey == false)
 		 {  
 			$('#submit').click();
 			
@@ -46,6 +53,7 @@ $(document).ready(function()
       
         var guess = $("#guess").val();
         var effect = $('.number').effect("slide","fast");
+       
 		
 		
 		//varibles for implementing hotter or colder
@@ -87,21 +95,26 @@ $(document).ready(function()
                 break;
 				
 				
-            case guess == number:
+            case guess == number :
                 $('.number h2').html(guess + ' ' + "Is The Right Number")
                 
                 body.animate({backgroundColor: "#c0392b",color: "#fff"}, 500);
                 $('#submit').attr("disabled", true);
+                enterKey = true;
+                      
+
                 break;
 			
 			case guess != number:
 			if(previousDistance && newDistance){
 				switch(false){
+                        
 					case previousDistance > newDistance:
 						//colder response
 						$('.number h2').html("Try again! You're Getting Colder :(")
 						body.animate({backgroundColor: "#5fccff",color: "#3473db"}, 500);
 						break;
+                        
 					case newDistance > previousDistance:
 					//warmer response
 					
@@ -130,8 +143,12 @@ $(document).ready(function()
         body.animate({backgroundColor: "#ecf0f1",color: "#34495E"}, 500);
 		number = Math.floor(Math.random() * 100);
       $('#guess').val('');
-       $('.number h2').empty();
+      $('.number h2').empty();
       $('#submit').attr("disabled", false);
+        //added
+        enterKey = false;
+       
+     
 		
       console.log(number)
    };

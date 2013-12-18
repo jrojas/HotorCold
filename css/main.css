@@ -44,6 +44,9 @@ body {
 	background:#ecf0f1;
 	color:#34495E;
 	font-family: 'Rum Raisin', sans-serif;
+  
+        
+    
 }
 
 
@@ -71,21 +74,21 @@ text-align:center;
 .align-form{
 	
 	text-align:center;
-	}
-#submit,#reset{
-	
 
+}
+
+#submit,#reset
+{
 margin: 10px 10px;
 display: inline-block;
 width: 90px;
-color: #fff;
+/*color: #fff;*/
 font-size: 15px;
-
-background: #34495e;
+/*background: #34495e;*/
 border-radius: 3px;
 padding: 12px 0;
 font-weight: 500;
-border:none;
+
 
 	
 	}
