@@ -98,7 +98,7 @@ $(document).ready(function()
 				
 				
             case guess == number :
-                $('.number h2').html(guess + ' ' + "Is The correcr guess. Click Reset to play a new game")
+                $('.number h2').html(guess + ' ' + "Is The correct guess. Click Reset to play a new game")
                 
                
                 animateBody("#c0392b","#fff");
