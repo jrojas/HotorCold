@@ -74,31 +74,35 @@ $(document).ready(function()
             
             case guess == '':
                 $('.number h2').html("* Number guess can not be blank")
-					 body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
-				
+					 
+				      animateBody("#ffffff","#34495E");
                 break;
             
 			case  isNaN(guess) :
 				 $('.number h2').html("* Value is not a legal number!")
-				 	body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
-				 
+				 	
+				      animateBody("#ffffff","#34495E");
                 break;
             
             case guess > 100 || guess <= 0:
                 $('.number h2').html("Enter a number between 0-100")
-				body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
+				    
+                  animateBody("#ffffff","#34495E");
                 break;
 				
 			case guess == previousGuess :
                 $('.number h2').html("Your entered the same number? Try Again!")
-				body.animate({backgroundColor: "#ffffff",color: "#34495E"}, 500);
+				
+                animateBody("#ffffff","#34495E");
                 break;
 				
 				
             case guess == number :
-                $('.number h2').html(guess + ' ' + "Is The Right Number")
+                $('.number h2').html(guess + ' ' + "Is The Right Number. Reset to Play a new game")
                 
-                body.animate({backgroundColor: "#c0392b",color: "#fff"}, 500);
+               
+                animateBody("#c0392b","#fff");
+                
                 $('#submit').attr("disabled", true);
                 enterKey = true;
                       
@@ -112,7 +116,8 @@ $(document).ready(function()
 					case previousDistance > newDistance:
 						//colder response
 						$('.number h2').html("Try again! You're Getting Colder :(")
-						body.animate({backgroundColor: "#5fccff",color: "#3473db"}, 500);
+					
+                         animateBody("#5fccff","#3473db");
 						break;
                         
 					case newDistance > previousDistance:
@@ -120,7 +125,8 @@ $(document).ready(function()
 					
 						
 					$('.number h2').html("Your Guess is Warmer!:)")
-                		body.animate({backgroundColor: "#d35400",color: "#34495E"}, 500);
+                		
+                        animateBody("#d35400","#34495E");
 						break;
 					
 					}
@@ -128,7 +134,8 @@ $(document).ready(function()
 				}else{
 						$('.number h2').html(guess + ' ' + "Is The Wrong Number")
                 
-                		body.animate({backgroundColor: "#5fccff",color: "#34495E"}, 500);
+                		
+                        animateBody("#5fccff","#34495E");
 					}
 					break;
         
@@ -145,13 +152,23 @@ $(document).ready(function()
       $('#guess').val('');
       $('.number h2').empty();
       $('#submit').attr("disabled", false);
-        //added
         enterKey = false;
        
      
 		
       console.log(number)
    };
+    
+     // Animates the body background 
+    
+  function animateBody(bgcolor,color)
+    {
+      
+        body.animate({backgroundColor: bgcolor,color: color}, 500)
+            
+            
+            
+    };
 	
 
 

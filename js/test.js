@@ -1,5 +1,6 @@
-//JavaScript Document to refator code to the Object Literal Pattern
+//JavaScript Document to refactor code to the Object Literal Pattern
 $(document).ready(function()
 {
 
-    });
+    
+});
