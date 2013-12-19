@@ -10,9 +10,9 @@ $(document).ready(function()
     var	enterKey = false;
     var messageTo = $('.number h2');
     var slideFast = $('.number');
-    var guessClick = $('#guess');
+    var guessInput = $('#guess');
     var submitClick = $('#submit');
- 
+    var reset = $('#reset');
     
 
    
@@ -20,25 +20,29 @@ $(document).ready(function()
     submitClick.on('click', function () {
         
         validateGuess();
+        guessInput.focus();
 		
     });
 
     //Click Function to reset game
-    $('#reset').on('click', function() {
+    reset.on('click', function() {
         // you can use resetGame(this);
        // resetGame();
 		resetGame();
+        guessInput.focus();
 		
     });
 	
 	
 	//Click Function to handle the key press
-	guessClick.keypress(function(e)
+	guessInput.keypress(function(e)
 	{
    		
         if(e.which == 13 && enterKey == false)
 		 {  
 			submitClick.click();
+           
+             
 			
 			
     	 }
@@ -143,6 +147,7 @@ $(document).ready(function()
         
         };
 		previousGuess = guess;
+        guessInput.val('');
     };
 	
 
@@ -151,10 +156,11 @@ $(document).ready(function()
     {
       
         animateBody("#ecf0f1","#34495E");
-		number = Math.floor(Math.random() * 100);
-      guessClick.val('');
-      messageTo.empty();
-      submitClick.attr("disabled", false);
+        number = Math.floor(Math.random() * 100);
+      
+        guessInput.val('');
+        messageTo.empty();
+        submitClick.attr("disabled", false);
         enterKey = false;
        
      
@@ -176,7 +182,6 @@ $(document).ready(function()
 
 
 	
-			
 				
 			
 					
