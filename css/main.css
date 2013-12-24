@@ -1,9 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Rum+Raisin);
-@charset "utf-8";
 @import url("reset.css");
 
 /* CSS Document */
-
 
 h1{
 
@@ -13,8 +11,8 @@ font-size: 36px;
 line-height: 130px;
 font-weight: bold;
 
-letter-spacing: -2px;
 }
+
 /* Glyph, by Harry Roberts */
 		
 hr {
@@ -33,19 +31,25 @@ hr:after {
     padding: 0 0.25em;
     background: white;
 }
+
+/* End Glyph, by Harry Roberts */
 h2{
 	text-align:center;
 	font-size: 30px;
 	line-height: 60px;
 	font-weight:bold;
-	
 }
 
 body {
 	background:#ecf0f1;
 	color:#34495E;
 	font-family: 'Rum Raisin', sans-serif;
+  
+        
+    
 }
+
+
 .content{
 	width:960px;
 	margin:0 auto;
@@ -70,6 +74,7 @@ text-align:center;
 .align-form{
 	
 	text-align:center;
+<<<<<<< HEAD
 	}
 #submit{
 	
@@ -78,6 +83,24 @@ text-align:center;
 	}
 #reset{
 	
+=======
+
+}
+
+#submit,#reset
+{
+margin: 10px 10px;
+display: inline-block;
+width: 90px;
+color: #fff;
+font-size: 15px;
+background: #34495e;
+border-radius: 3px;
+padding: 12px 0;
+font-weight: 500;
+border: none;
+	}
+>>>>>>> origin/gh-pages
 
 	margin: 10px auto;}
 
